@@ -32,6 +32,7 @@
       font-weight: 300;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      text-transform: lowercase;
     }
 
     a { color: inherit; }
@@ -81,6 +82,7 @@
       border-radius: 2px;
       text-decoration: none;
       transition: background 0.2s ease, color 0.2s ease;
+      text-transform: lowercase;
     }
 
     .nav a.cta:hover { background: var(--gold); color: #111d21; }
@@ -159,6 +161,7 @@
       display: inline-block;
       margin: 0 0 6px;
       transform: rotate(-2deg);
+      text-transform: lowercase;
     }
 
     .hero-copy h1 {
@@ -166,6 +169,7 @@
       line-height: 0.95;
       margin: 0 0 28px;
       letter-spacing: -0.01em;
+      text-transform: lowercase;
     }
 
     /* ticket CTA */
@@ -199,11 +203,13 @@
       font-size: 11px;
       letter-spacing: 0.08em;
       color: var(--gold-dim);
+      text-transform: lowercase;
     }
 
     .ticket-main .t2 {
       font-size: 19px;
       color: var(--paper);
+      text-transform: lowercase;
     }
 
     .ticket-stub {
@@ -251,6 +257,7 @@
       font-size: 13px;
       letter-spacing: 0.04em;
       color: var(--paper-dim);
+      text-transform: lowercase;
     }
 
     /* sections */
@@ -270,11 +277,173 @@
       transform: rotate(-1.5deg);
       display: inline-block;
       margin: 0 0 10px;
+      text-transform: lowercase;
     }
 
     h2 {
       font-size: clamp(30px, 4vw, 42px);
       margin: 0 0 8px;
+      text-transform: lowercase;
+    }
+
+    .souvenirs {
+      background: rgba(17, 29, 33, 0.4);
+    }
+
+    .souvenirs-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .souvenirs-header {
+      margin-bottom: 28px;
+    }
+
+    .slider-shell {
+      border: 1px solid rgba(243, 234, 217, 0.1);
+      background: rgba(243, 234, 217, 0.02);
+      padding: 18px;
+      box-shadow: 0 18px 50px -30px rgba(0, 0, 0, 0.55);
+    }
+
+    .slides {
+      position: relative;
+      min-height: 510px;
+      overflow: hidden;
+      background: rgba(17, 29, 33, 0.7);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      transform: scale(0.98);
+    }
+
+    .slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+      z-index: 1;
+    }
+
+    .slide-media {
+      position: relative;
+      overflow: hidden;
+      min-height: 510px;
+    }
+
+    .slide-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.9) contrast(1.05);
+    }
+
+    .slide-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(17, 29, 33, 0.2), rgba(17, 29, 33, 0.04));
+    }
+
+    .slide-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px 30px;
+      background: rgba(17, 29, 33, 0.8);
+      border-left: 1px solid rgba(243, 234, 217, 0.08);
+    }
+
+    .slide-copy .tag {
+      width: fit-content;
+      margin-bottom: 18px;
+    }
+
+    .slide-copy h3 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 4vw, 40px);
+      line-height: 1.04;
+      text-transform: lowercase;
+    }
+
+    .slide-copy p {
+      margin: 0;
+      color: var(--paper-dim);
+      line-height: 1.75;
+      font-size: 15px;
+      text-transform: lowercase;
+    }
+
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .slider-nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    .slider-button {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(227, 181, 103, 0.45);
+      background: transparent;
+      color: var(--paper);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .slider-button:hover,
+    .slider-button:focus-visible {
+      background: rgba(227, 181, 103, 0.08);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .slider-dots {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgba(243, 234, 217, 0.3);
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .slider-dot.is-active {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: scale(1.1);
+    }
+
+    .slider-index {
+      font-family: 'Archivo', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--paper-dim);
+      text-transform: lowercase;
     }
 
     .info { background: var(--dusk); }
@@ -294,35 +463,140 @@
       color: var(--paper-dim);
       max-width: 52ch;
       margin: 0;
+      text-transform: lowercase;
     }
 
-    .notes {
+    .collab-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .collab-card {
+      perspective: 1000px;
+      cursor: pointer;
+      position: relative;
+      height: 240px;
+      transform: rotate(var(--rot, 0deg));
+    }
+
+    .collab-card:nth-child(1) { --rot: -1.2deg; }
+    .collab-card:nth-child(2) { --rot: 1.3deg; }
+    .collab-card:nth-child(3) { --rot: -0.9deg; }
+    .collab-card:nth-child(4) { --rot: 1.1deg; }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+
+    .collab-card.is-flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: rgba(28, 24, 31, 0.9);
+      border: 1px solid rgba(243, 234, 217, 0.12);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+      padding: 18px;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      justify-content: space-between;
     }
 
-    .note {
-      border-left: 1px solid var(--dusk-line);
-      padding-left: 20px;
+    .card-face::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(243, 234, 217, 0.08);
+      pointer-events: none;
     }
 
-    .note .date {
-      font-style: italic;
-      color: var(--gold);
-      font-size: 19px;
+    .card-front {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    .note h3 {
-      font-size: 19px;
-      margin: 4px 0 6px;
+    .card-back {
+      transform: rotateY(180deg);
     }
 
-    .note p {
-      font-size: 15px;
-      line-height: 1.65;
-      color: var(--paper-dim);
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'Archivo', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      padding: 5px 8px;
+      border: 1px solid rgba(143, 180, 153, 0.45);
+      background: rgba(143, 180, 153, 0.06);
+    }
+
+    .stamp {
+      font-family: 'Archivo', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.8;
+      transform: rotate(2deg);
+    }
+
+    .collab-card h3 {
+      font-size: 21px;
       margin: 0;
+      position: relative;
+      z-index: 1;
+      text-transform: lowercase;
+    }
+
+    .card-front h3 {
+      font-size: 24px;
+    }
+
+    .card-back h3 {
+      display: none;
+    }
+
+    .collab-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--paper-dim);
+      text-transform: lowercase;
+    }
+
+    .card-front p {
+      display: none;
+    }
+
+    .card-back .card-top {
+      display: none;
+    }
+
+    .card-back p {
+      display: block;
     }
 
     .promo-strip {
@@ -339,7 +613,7 @@
 
     .promo-strip .msg .kicker { margin-bottom: 6px; }
 
-    .promo-strip .msg h2 { font-size: 26px; }
+    .promo-strip .msg h2 { font-size: 26px; text-transform: lowercase; }
 
     .shop { text-align: center; }
 
@@ -352,6 +626,7 @@
       color: var(--paper-dim);
       line-height: 1.65;
       margin: 0;
+      text-transform: lowercase;
     }
 
     .shop-badge {
@@ -366,6 +641,7 @@
       font-size: 13px;
       letter-spacing: 0.04em;
       color: var(--paper-dim);
+      text-transform: lowercase;
     }
 
     .shop-badge .dot {
@@ -373,6 +649,207 @@
       height: 6px;
       border-radius: 50%;
       background: var(--sage);
+    }
+
+    /* tracks */
+    .tracks {
+      background: rgba(17, 29, 33, 0.4);
+    }
+
+    .tracks-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .tracks-header {
+      margin-bottom: 28px;
+    }
+
+    .tracklist-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .track-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .track-item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 52px 1fr 26px;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 16px;
+      background: rgba(243, 234, 217, 0.02);
+      border: 1px solid rgba(243, 234, 217, 0.08);
+      color: var(--paper);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      font: inherit;
+    }
+
+    .track-item:hover,
+    .track-item:focus-visible {
+      border-color: rgba(227, 181, 103, 0.5);
+      background: rgba(227, 181, 103, 0.04);
+      outline: none;
+    }
+
+    .track-item.is-active {
+      border-color: rgba(227, 181, 103, 0.8);
+      background: rgba(227, 181, 103, 0.09);
+      transform: translateX(4px);
+    }
+
+    .track-num {
+      font-family: 'Archivo', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--gold-dim);
+    }
+
+    .track-title {
+      font-size: 21px;
+      line-height: 1.1;
+      text-transform: lowercase;
+    }
+
+    .track-arrow {
+      justify-self: end;
+      font-size: 26px;
+      color: var(--gold);
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    .track-detail {
+      min-height: 420px;
+      background: rgba(243, 234, 217, 0.03);
+      border: 1px solid rgba(243, 234, 217, 0.08);
+      padding: 22px 20px 20px;
+    }
+
+    .track-detail-header {
+      display: flex;
+      align-items: end;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(243, 234, 217, 0.1);
+    }
+
+    .detail-num {
+      font-family: 'Archivo', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+    }
+
+    .track-detail h3 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 38px);
+      letter-spacing: -0.02em;
+    }
+
+    .track-meta {
+      display: grid;
+      gap: 18px;
+    }
+
+    .track-meta-block {
+      padding: 0 0 14px;
+      border-bottom: 1px solid rgba(243, 234, 217, 0.06);
+    }
+
+    .track-meta-block:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .track-meta-block span {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-family: 'Archivo', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+      color: var(--gold-dim);
+    }
+
+    .track-meta-block p {
+      margin: 0;
+      color: var(--paper-dim);
+      line-height: 1.7;
+      font-size: 15px;
+      white-space: pre-line;
+      text-transform: lowercase;
+    }
+
+    .track-extra {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(243, 234, 217, 0.08);
+    }
+
+    .track-extra[hidden] {
+      display: none;
+    }
+
+    .track-extra-header {
+      margin-bottom: 14px;
+    }
+
+    .track-extra-header span {
+      display: inline-block;
+      font-family: 'Archivo', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+      color: var(--gold);
+    }
+
+    .track-listen {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      background: var(--gold);
+      color: #111d21;
+      text-decoration: none;
+      font-family: 'Archivo', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      border-radius: 2px;
+      margin-bottom: 18px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .track-listen:hover,
+    .track-listen:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px -12px rgba(227, 181, 103, 0.5);
+      outline: none;
+    }
+
+    .track-video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid rgba(243, 234, 217, 0.08);
+      background: rgba(17, 29, 33, 0.7);
+    }
+
+    .track-video iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
     }
 
     /* footer */
@@ -393,6 +870,8 @@
     .socials {
       display: flex;
       gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .socials a {
@@ -405,6 +884,70 @@
     }
 
     .socials a:hover { color: var(--gold); }
+
+    .follow-btn {
+      display: inline-flex;
+      align-items: stretch;
+      text-decoration: none;
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      overflow: hidden;
+      background: transparent;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .follow-btn:hover,
+    .follow-btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -12px rgba(227, 181, 103, 0.4);
+      outline: none;
+    }
+
+    .follow-btn-main {
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      justify-content: center;
+    }
+
+    .follow-btn-main .t1 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--gold-dim);
+      text-transform: lowercase;
+    }
+
+    .follow-btn-main .t2 {
+      font-size: 16px;
+      color: var(--paper);
+      text-transform: lowercase;
+    }
+
+    .follow-btn-stub {
+      position: relative;
+      width: 78px;
+      flex-shrink: 0;
+      background: var(--gold);
+      color: #111d21;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      text-align: center;
+      writing-mode: vertical-rl;
+    }
+
+    .follow-btn-stub::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      border-left: 2px dashed rgba(17, 29, 33, 0.35);
+    }
 
     .copyright {
       font-family: 'Archivo', sans-serif;
@@ -473,29 +1016,197 @@
 
     <div class="divider" aria-hidden="true"></div>
 
-    <section class="info">
-      <div class="info-grid">
-        <div>
-          <span class="kicker">notes de saison</span>
-          <h2>une histoire écrite d’avance</h2>
-          <p class="lede">equynox est né entre deux étés — un album qui parle de changement sans savoir qu’on le vivait en temps réel.</p>
+    <section class="souvenirs" aria-labelledby="souvenirs-title">
+      <div class="souvenirs-inner">
+        <div class="souvenirs-header">
+          <span class="kicker">souvenirs</span>
+          <h2 id="souvenirs-title">des instantanés qui gardent la chaleur du voyage</h2>
         </div>
 
-        <div class="notes">
-          <article class="note">
-            <div class="date">été 2024</div>
-            <h3>les premières esquisses</h3>
-            <p>remplace ce texte par l'histoire réelle derrière la création de l'album : où, quand, avec qui.</p>
-          </article>
-          <article class="note">
-            <div class="date">hiver 2025</div>
-            <h3>en studio</h3>
-            <p>parle du processus d'enregistrement, des collaborateur·rice·s, ou d'une anecdote marquante.</p>
-          </article>
-          <article class="note">
-            <div class="date">septembre 2026</div>
-            <h3>la sortie</h3>
-            <p>annonce les singles déjà sortis, les dates de spectacle à venir ou toute autre promotion.</p>
+        <div class="slider-shell">
+          <div class="slides" aria-live="polite">
+            <article class="slide is-active">
+              <div class="slide-media">
+                <img src=assets/souvenir1.jpg alt="vue d'un paysage au bord de l'eau lors d'un soir de voyage">
+              </div>
+              <div class="slide-copy">
+                <span class="tag">aube</span>
+                <h3>il était une fois...</h3>
+                <p>des connaissances qui apprennaient à mieux se connaître par la musique,</p>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="slide-media">
+                <img src=assets/souvenir2.jpg alt="voiture sur une route de montagne au coucher du soleil">
+              </div>
+              <div class="slide-copy">
+                <span class="tag">matin</span>
+                <h3>quand la journée s'annonce ensoleillée</h3>
+                <p>j'ai rencontré en chemin des passionnés comme moi, </p>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="slide-media">
+                <img src=assets/souvenir3.jpg alt="scène de studio avec instruments et lumière chaude">
+              </div>
+              <div class="slide-copy">
+                <span class="tag">après-midi</span>
+                <h3>des morceaux qui au fil des jours</h3>
+                <p>les idées prennent forme, tout comme l'excitation d'un album qui se crée...</p>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="slide-media">
+                <img src=assets/souvenir4.jpg alt="portrait de groupe dans une ambiance chaleureuse et nocturne">
+              </div>
+              <div class="slide-copy">
+                <span class="tag">crépuscule</span>
+                <h3>un tour complet du Soleil</h3>
+                <p>jusqu'à avoir la chance de terminer le projet ensemble, tous chez nous.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="slider-controls">
+            <div class="slider-nav" aria-label="navigation du carrousel">
+              <button class="slider-button" type="button" data-dir="prev" aria-label="Afficher le souvenir précédent">&#8592;</button>
+              <button class="slider-button" type="button" data-dir="next" aria-label="Afficher le souvenir suivant">&#8594;</button>
+            </div>
+            <div class="slider-dots" aria-label="indiquer le souvenir actif">
+              <button class="slider-dot is-active" type="button" data-slide="0" aria-label="Afficher le souvenir 1"></button>
+              <button class="slider-dot" type="button" data-slide="1" aria-label="Afficher le souvenir 2"></button>
+              <button class="slider-dot" type="button" data-slide="2" aria-label="Afficher le souvenir 3"></button>
+              <button class="slider-dot" type="button" data-slide="3" aria-label="Afficher le souvenir 4"></button>
+            </div>
+            <div class="slider-index" aria-live="polite"><span id="slider-current">01</span> / 04</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section class="tracks" aria-labelledby="tracks-title">
+      <div class="tracks-inner">
+        <div class="tracks-header">
+          <span class="kicker">11 morceaux</span>
+          <h2 id="tracks-title">la tracklist</h2>
+        </div>
+
+        <div class="tracklist-grid">
+          <div class="track-list" aria-label="liste des chansons">
+            <button class="track-item is-active" type="button" data-track="0" aria-label="Afficher les infos de la chanson 01">
+              <span class="track-num">01</span>
+              <span class="track-title">Équinoxe (Intro)</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="1" aria-label="Afficher les infos de la chanson 02">
+              <span class="track-num">02</span>
+              <span class="track-title">Monstre</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="2" aria-label="Afficher les infos de la chanson 03">
+              <span class="track-num">03</span>
+              <span class="track-title">Wake up</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="3" aria-label="Afficher les infos de la chanson 04">
+              <span class="track-num">04</span>
+              <span class="track-title">Dernier métro</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="4" aria-label="Afficher les infos de la chanson 05">
+              <span class="track-num">05</span>
+              <span class="track-title">Lol</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="5" aria-label="Afficher les infos de la chanson 06">
+              <span class="track-num">06</span>
+              <span class="track-title">Fin du monde</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="6" aria-label="Afficher les infos de la chanson 07">
+              <span class="track-num">07</span>
+              <span class="track-title">Motion Sickness</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="7" aria-label="Afficher les infos de la chanson 08">
+              <span class="track-num">08</span>
+              <span class="track-title">Quatrième mur</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="8" aria-label="Afficher les infos de la chanson 09">
+              <span class="track-num">09</span>
+              <span class="track-title">Dans le vide</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="9" aria-label="Afficher les infos de la chanson 10">
+              <span class="track-num">10</span>
+              <span class="track-title">La dernière fois</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+            <button class="track-item" type="button" data-track="10" aria-label="Afficher les infos de la chanson 11">
+              <span class="track-num">11</span>
+              <span class="track-title">Go Mad!</span>
+              <span class="track-arrow" aria-hidden="true">›</span>
+            </button>
+          </div>
+
+          <article class="track-detail" aria-live="polite">
+            <div class="track-detail-header">
+              <span class="detail-num" id="detail-num">01</span>
+              <h3 id="track-title">Équinoxe (Intro)</h3>
+            </div>
+
+            <div class="track-meta">
+              <div class="track-meta-block">
+                <span>crédits</span>
+                <p id="track-credits">Paroles : Xavier Fournier
+Musique : Xavier Fournier
+Interprété par : Xavier Fournier (Voix)</p>
+              </div>
+
+              <div class="track-meta-block">
+                <span>paroles</span>
+                <p id="track-lyrics">Honnetement c'est long
+On a passé tout notre été à faire semblant que c'est good
+maintenant on s'effondre
+On copie sur les feuilles d'arbres qui tombent as they should
+2 degrés sur le compteur
+Y'aura jamais de veste assez chaude pour me protéger de mon cold heart
+So j'accepte mon fate
+J'pourrais comprendre que y'en a qui me trouvent fake
+Mais j'fais pas exprès
+J'peux fuck up une relation express
+Mais c'est comme si toutes les saisons me changent
+Ma maison me dérange dès que j'pense à la ranger
+Est-ce que du real talk si j'fais que parler mes véritables problêmes?
+Sans jamais écouter mon prochain
+Maybe I been wrong
+J'devrais arrêter de me slow down
+J'devrais arrêter de blamer les autres pour les conséquences venant de mes propres choix
+Imma change my mind
+Quand le froid viendra me chill out
+Its a matter of time
+Avant que l'automne me fuck up
+Maybe I've been wrong</p>
+              </div>
+
+              <div class="track-meta-block">
+                <span>anecdote</span>
+                <p id="track-anecdote">À venir — ajoute une anecdote pour cette piste quand tu veux.</p>
+              </div>
+
+              <div class="track-extra" id="track-extra" hidden>
+                <div class="track-extra-header">
+                  <span>déjà disponible</span>
+                </div>
+                <a class="track-listen" href="https://euphory.tunelink.to/monstre" target="_blank" rel="noopener noreferrer">écouter monstre</a>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -540,10 +1251,179 @@
         <a href="https://www.tiktok.com/@xaviereuphory" target="_blank" rel="noopener noreferrer">tiktok</a>
         <a href="https://open.spotify.com/intl-fr/artist/0uHOElDo0UUKXn6LzLS2Wg?si=QHfLiN27RnKn42soefDXmA" target="_blank" rel="noopener noreferrer">spotify</a>
         <a href="https://www.youtube.com/@XavierEuphory" target="_blank" rel="noopener noreferrer">youtube</a>
+        <a class="follow-btn" href="https://euphory.org" target="_blank" rel="noopener noreferrer" aria-label="Suivre Xavier Euphory">
+          <span class="follow-btn-main">
+            <span class="t1">suivre</span>
+            <span class="t2">xavier euphory</span>
+          </span>
+          <span class="follow-btn-stub">follow</span>
+        </a>
       </nav>
       <div class="copyright">© 2026 bienvenuecheznous. tous droits réservés.</div>
     </div>
   </footer>
+
+  <script>
+    // flip card interaction
+    document.querySelectorAll('.collab-card').forEach(card => {
+      card.addEventListener('click', function() {
+        this.classList.toggle('is-flipped');
+      });
+    });
+
+    const slides = document.querySelectorAll('.slide');
+    const sliderDots = document.querySelectorAll('.slider-dot');
+    const sliderCurrent = document.getElementById('slider-current');
+    const sliderButtons = document.querySelectorAll('.slider-button');
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const totalSlides = slides.length;
+      currentSlide = (index + totalSlides) % totalSlides;
+
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('is-active', slideIndex === currentSlide);
+      });
+
+      sliderDots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('is-active', dotIndex === currentSlide);
+      });
+
+      sliderCurrent.textContent = String(currentSlide + 1).padStart(2, '0');
+    }
+
+    sliderButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const direction = button.dataset.dir === 'next' ? 1 : -1;
+        showSlide(currentSlide + direction);
+      });
+    });
+
+    sliderDots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        showSlide(Number(dot.dataset.slide));
+      });
+    });
+
+    let sliderTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
+
+    const sliderShell = document.querySelector('.slider-shell');
+    sliderShell.addEventListener('mouseenter', () => clearInterval(sliderTimer));
+    sliderShell.addEventListener('mouseleave', () => {
+      sliderTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
+    });
+
+    const tracks = [
+      {
+        num: "01",
+        title: "Équinoxe (Intro)",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier\nInterprété par : Xavier Fournier (Voix)",
+        lyrics: "Honnetement c'est long\nOn a passé tout notre été à faire semblant que c'est good\nmaintenant on s'effondre\nOn copie sur les feuilles d'arbres qui tombent as they should\n2 degrés sur le compteur\nY'aura jamais de veste assez chaude pour me protéger de mon cold heart\nSo j'accepte mon fate\nJ'pourrais comprendre que y'en a qui me trouvent fake\nMais j'fais pas exprès\nJ'peux fuck up une relation express\nMais c'est comme si toutes les saisons me changent\nMa maison me dérange dès que j'pense à la ranger\nEst-ce que du real talk si j'fais que parler mes véritables problêmes?\nSans jamais écouter mon prochain\nMaybe I been wrong\nJ'devrais arrêter de me slow down\nJ'devrais arrêter de blamer les autres pour les conséquences venant de mes propres choix\nImma change my mind\nQuand le froid viendra me chill out\nIts a matter of time\nAvant que l'automne me fuck up\nMaybe I've been wrong",
+        anecdote: "À la fin de l'intro, on peut entendre Raphael Reeves et moi qui dit EQUYNOX. L'audio est tiré d'une des très early vidéos d'archives de la création de l'album, dans lesquelles on ne faisait encore que rêvasser à comment ça pourrait sonner. Fun fact; la cassette au début a aussi été enregistrée chez nous, avec le lecteur VHS de la grand-mère à Nathan."
+      },
+      {
+        num: "02",
+        title: "Monstre",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier, Raphaël Reeves, Nathan Frampton\nInterprété par : Xavier Fournier (Voix), Raphael Reeves (Guitare), Nathan Frampton (Keys), Zachary Mollé (Percussions), Lili Desmarais (Choriste), Annabelle Marcoux (Choriste)",
+        lyrics: "J'veux pu regarder en arrière\nMmh\nLes passants me regardent courir comme si j'fuyais un monstre\nOublie celui que j'étais hier\nSi j'attend pour m'éloigner qui va sauver le monde?\nÇa prend de l'égo du charactère\nMais bro j'suis pas un acteur\nJ'fais ça pour de vrai\nT'entendras l'écho de ma carrière\nC'est beau mais c'est pas qu'un rêve\nDès que j'ai une idée en tête\nJ'peux pu la sortir de là\nElle pourrait crier à l'aide impossible que j'la fais pas\nJ'ai trop de projets sur le side\nCerveau plein de virées folles\nJe mourrai quand j'serai satisfait d'mes travaux, j'serai done\nHuh\nLes passants me regardent courir comme si je fuyais un monstre\nLes passants me regardent courir comme si je fuyais un monstre\nJ'serai beaucoup beaucoup trop loin\nMmh\nLes passants s'demandent si j'aurais pu quitter la Terre\nSi j'savais tout ça me plairait moins\nC'est marrant seulement si t'apprends des affaires en chemin\nJ'suis pas un héro mais j'me vois l'etre\nRegarde ou est-ce que j'suis astheure\nJ'ai grandi un trait\nPassé d'un jello à m'voir renaître\nDes fois t'as juste besoin d'un plaster\nT'inquiète j'm'y connais\nDès que j'ai une idée en tête\nJ'peux pu la sortir de là\nElle pourrait crier à l'aide impossible que j'la fais pas\nJ'ai trop de projets sur le side\nCerveau plein de virées folles\nJe mourrai quand j'serai satisfait d'mes travaux, j'serai done\nHuh\nLes passants me regardent courir comme si je fuyais un monstre\nLes passants me regardent courir comme si je fuyais un monstre\n(Ah)\n(Ah)\n(Je fuyais un monstre)\n(Nah je fuyais un monstre)",
+        anecdote: "Cette chanson est la première que j'ai écrite avec Nathan Frampton de toute ma vie, on était tous entassé dans sa petite chambre à Sainte-Rose. Zachary, un de ses amis a ouvert une canette dans le micro, on a éclaté de rire et on l'a laissé dans le mix."
+      },
+      {
+        num: "03",
+        title: "Wake up",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier\nInterprété par : Xavier Fournier (Voix), Raphael Reeves (Guitares)",
+        lyrics: "50 kilometres plus loin de la maison\nY fallait ben que je bouge pour une raison\nLa maman et le daron m'ont pas vu de la saison\nY'ont pas posé de questions sur\nComment j'pourrais make it\nUn jeune boy qui est jamais là sans son équipe\nIls pourraient passer 2h à décorer le portique\nRien d'autre que décorer le portique\n50 kilomètres plus loin que la routine\nFaut retrouver la vitesse et le motive\nNah, god damn\nC'est samedi soir\nY'a mes démons qui me supplient de sortir\nMême si je pourrais me sentir really really far\nOn bâtit un empire au milieu de notre basement\nPas le temps d'etre coké break many many hearts\nC'est le temps de wake up, aucunement de make out\nJ'pouvais pas guess toutes ces sottises\nMalgré les surprises j'rap pas si j'pas sous tise\nNow, j'respirais d'la force dans mes soupirs\nIls catchent pas pour maintenant plus tard ils vont subir\nNan, j'ai pas fait tout c'chemin pour fuir\nSnakes dans mes DM j'vois dans leur sourire\nJuste pour ramener les rires\nJ'vie ma va vie comme un bohème qui n'veut pas vieillir\nMais bon j'fais qu'fuck ça\nDépenser mon salaire sur du vert, au lieu de mes repas\nQue j'le fasse ou pas\nJ'finit pas mon projet pis j'pense déjà à la suite nah\nNever back down never what?\nBig Wood-Back j'downerai plus tard\nTkt je downerai plus tard\nMais vraiment plus fort\nMême si je pourrais me sentir really really far\nOn bâtit un empire au milieu de notre basement\nPas le temps d'etre coké break many many hearts\nC'est le temps de wake up, aucunement de make out\nMême si je pourrais me sentir really really far\nOn bâtit un empire au milieu de notre basement\nPas le temps d'etre coké break many many hearts\nC'est le temps de wake up, aucunement de make out\nC'est le temps de wake up, aucunement de make out, yeah\nC'est le temps de wake up, aucunement de make out",
+        anecdote: "Wake up est une des dernières que j'ai faite, mais c'est aussi la première que j'ai complètement faite dans notre nouvel apppartement. Il y a toujours un sentiment d'insécurité face à quitter son nid familial, mais on finit par se rendre compte que c'est juste une chance de se réveiller et d'enfin aller vivre sa vie."
+      },
+      {
+        num: "04",
+        title: "Dernier métro",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier\nInterprété par : Xavier Fournier (Voix)",
+        lyrics: "Peut-être qu'on aurait pas dû manquer le dernier métro\nC'est too bad, viens on walk home\nJ'm'entête à vouloir être remarqué sur mes réseaux\nQuand t'es too sad, j'peux pas talk on myself\nBloqué dans le process, I don't got no vice left\nOn enchaînait les protest, le bonheur devenait priceless\nLe bonheur devenait priceless\nJ'pense qu'on coule le vibe test (Fuck)\nJ'voulais pas défoncer les portes pendant qu'on s'pogne\nMais que l'automne arrive, j'pourrai pu trop cogner\nT'osais pas m'annoncer d'vouloir sortir de ce bordel\nDès que j'prend ton appel, c'est Peace Ciao Bye\nWhy, you making me feel like a fucking loser\nIf Cupid is a shooter, he passed me by\nJ'write mes démons sur le coin de tous les papers\nC'est stupid de se fool, moi j'voulais juste vibe\nPeut-être qu'on aurait pas dû manquer le dernier métro\nC'est too bad, viens on walk home\nJ'm'entête à vouloir être remarqué sur mes réseaux\nQuand t'es too sad, j'peux pas talk on myself\nBloqué dans le process, I don't got no vice left\nOn enchaînait les protest, le bonheur devenait priceless\nLe bonheur devenait priceless\nJ'pense qu'on coule le vibe test\nJ'me connais mal\nOn se sautait dans les bras quand\nJ'faisais bon image\nPour disparaître en un coup d'vent\nSur le long des rails\nOn jouait comme des enfants\nY'a pu de côté tranchant\nTant qu'on courra ensemble nah\nMes amis m'diront d'aller far far away\nY'est pas question que j'parte, les gars ain't no way\nNo way, j'penserais pas\nPouvoir faire ça\nY'a aucune caméra\nQui pourrait capter nos vrais feelings\nY savent pas le meaning\nPis si on arrête pas\nDe redescendre du ceiling\nOn finira par sleep-in\nWhy, you making me feel like a fucking loser\nIf Cupid is a shooter, he passed me by\nJ'write mes démons sur le coin de tous les papers\nC'est stupid de se fool, moi j'voulais juste vibe\nPeut-être qu'on aurait pas dû manquer le dernier métro\nC'est too bad, viens on walk home\nJ'm'entête à vouloir être remarqué sur mes réseaux\nQuand t'es too sad, j'peux pas talk on myself\nBloqué dans le process, I don't got no vice left\nOn enchaînait les protest, le bonheur devenait priceless\nLe bonheur devenait priceless\nJ'pense qu'on coule le vibe test\nJ'en ai mal à la tête\nPeut-être que si j'avais pas poussé sur mon égo\nOn pourrait négocier sur ton bien-être\nJ'fight à jamais c'que j'ai loupé c'est un fléau\nMoi j'voulais m'efforcer d'calmer la bête\nPeut-être que si j'avais pas poussé sur mon égo\nOn pourrait négocier sur ton bien-être\nJ'perd mes idées à force de m'faire des scénarios",
+        anecdote: "Tirée d'un vieux texte de 2023, Dernier métro a été retravaillée pour le projet. Je trouvais qu'elle collait au vibe général du projet donc je l'ai ressorti des cendres pour "
+      },
+      {
+        num: "05",
+        title: "Lol",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier\nInterprété par : Xavier Fournier (Voix), Raphael Reeves (Guitares)",
+        lyrics: "J'envie le monde\nEt sa façon de me faire douter de tout\nÀ des kilomètres à la ronde\nY'a de l'action mais j'suis vraiment mieux chez nous\nT'envahies mes ondes\nJ'suis down même si la transmission devient flou\nApparue comme le lipstick sur ma joue\nC'est un joli ajout, très jolie je l'avoue\nQuand j'y pense\nJ'ai bien fait de me lancer\nJ'ai jamais de chance\nEst-ce que là j'ai gagné?\nY'a pas d'évidence\nMais je sais que je veux danser\nSans regarder l'heure\nQuand j'te dis « lol » je souris\nJ'analyse tout c'que t'écris\nTout un phénomène, sorry\nJ'pensais pas que c'tait for real\nT'es une flamme, je suis une bougie\nUn briquet pourrait même pas me light up\nMe light up\nVraiment étrange\nComment tu fais pour m'attirer dans l'fond tes yeux bleus\nMa page était blanche\nLà j'ai déjà presque fini le tome 2\nJ'sais pas si c'est le green ou ta voix\nQui fait que j'entends que toi\nY'a des feels qui passent tout droits\nY'en a d'autres qui restent là\nAssis sur le boulevard\nQuand Y se fait tard\nOn s'en caliss qui ait un char\nAnyways, c'est sûr qu'on rentre pied\nQuand j'y pense\nJ'ai bien fait de me lancer\nJ'ai jamais de chance\nEst-ce que là j'ai gagné?\nY'a pas d'évidence\nMais je sais que je veux danser\nSans regarder l'heure\nQuand j'te dis « lol » je souris\nJ'analyse tout c'que t'écris\nTout un phénomène, sorry\nJ'pensais pas que c'tait for real\nT'es une flamme, je suis une bougie\nUn briquet pourrait même pas me light up\nMe light up\nQuand j'te dis « lol » je souris\nJ'analyse tout c'que t'écris\nTout un phénomène, sorry\nJ'pensais pas que c'tait for real\nT'es une flamme, je suis une bougie\nUn briquet pourrait même pas me light up\nMe light up\nJ'me croyais fort, mais j'en veux encore et encore\nPas peur du noir, sauf quand j'te colle et que tu t'endors\nEst-ce qu'il est tard, ou on est le lendemain matin?\nNos cheveux se mêlent sur le satin",
+        anecdote: "À venir — ajoute une anecdote pour cette piste quand tu veux."
+      },
+      {
+        num: "06",
+        title: "Fin du monde",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier\nInterprété par : Xavier Fournier (Voix), KZ (Voix additionnelles)",
+        lyrics: "Baby slow down\nPourquoi tu me vois comme ça?\nNah j'suis pas un antagoniste\nplusieurs raisons expliquent que je suis distant\nBut I wonder why\nOn allait marcher downtown\nPour get trop high\nOn pouvait pu s'entendre\nMais on va f all night\nBaby fuck all that\nVeux-tu ride avec moi ou non?\nEst-ce que\nBébé slow down\nJ'mérite pas une femme comme toi\nMérite pas de smile like that\nJ'fais que tout fuck up\nPour seulement te dire « my bad » après\nJ'suis trop dans ma tête tu le savais\nPis si on s'en allait\nVoyager dans le temps jusqu'au day one\nOn pourrait peut-être s'avertir du danger\nLes larmes sur le plancher qui nous font slide comme un aréna\nC'pas comme si on le savait pas\nJ'finis jamais ce que je commence\nJe get mad au premier commentaire\nJ'vois les estrades gueulqnt pour la fin du monde\nMais j'pas du monde\nJ'finis jamais ce que je commence\nJe get mad au premier commentaire\nJ'vois les estrades gueulqnt pour la fin du monde\nMais j'pas du monde\nBaby slow down\nTu vas faire le tour de la Terre\nAvant même que j'occupe de mes affaires\nY'était ben trop tard\nPour nous ramener du côté de la lumière\nIt's dark outside, on est dans le monde à l'envers\nC'est strange\nJ'aurais juré que j't'avais montré mon autre side\nBaby c'est fake\nSo let's face it\nJ'devrais peut etre revoir mes principes\nÇa doit faire plus de 3h que j'regarde mon phone sur notre convo\nC'est dry\nY'a pas de questions, zéro discussion, baby i'm trying\nDans les airs toute la chaleur de nos corps s'envole sur un cargo\nLet's fly\nOn est en mission, baby y'a une raison\nJ'finis jamais ce que je commence\nJe get mad au premier commentaire\nJ'vois les estrades gueulqnt pour la fin du monde\nMais j'pas du monde\nJ'finis jamais ce que je commence\nJe get mad au premier commentaire\nJ'vois les estrades gueulqnt pour la fin du monde\nMais j'pas du monde\nJ'finis jamais ce que je commence",
+        anecdote: "À venir — ajoute une anecdote pour cette piste quand tu veux."
+      },
+      {
+        num: "07",
+        title: "Motion Sickness",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier\nInterprété par : Xavier Fournier (Voix, Keyboards, Bass, Guitares)",
+        lyrics: "(Comment j'pourrais dire le sentiment que j'ai live)\n(On dirait que je me sens chez…)\n(Ma grand-m j'ai eu la petite sœur\nAu final j'avais besoin que d'un peu d'air\nJ'attendais le bon temps, que le Soleil sorte\nL'impression qui a trop de choses à faire\nC'était juste le montant, de stress que je porte\nJ'ai la petite soeur au phonetel, l'annonce était fucked up\nY'a aucune mauvaise nouvelle qui peut gâcher le goût du potlock\nAu final peut-être que j'dois trop m'en faire\nJ'devrais être content, qu'ma colère se couche\nC'est l'histoire d'un jeune con, avec rien d'autre que d'l'ambition\nUn vieux laptop, Blue Yeti dans le salon\nC'pas un addon\nQue j'arrête pas de fuir, et dire pardon\nMais j'capable d'accepter, si tu me dis que c'est pas bon\nQue c'est pas ton vibe\nY'a des choses ben plus baddantes, que ça,c'pas tant grave\nEnfin touché un ballon, après 20 ans, j'maille\nSur le terrain, c'pas mon talent, qui va ramener la Coupe du Monde,\nSo j'mind mon business\nUn jour ou l'autre y'aura pu de nuages dans le ciel\nEn motion sickness\nJ'ai pris deux Gravol j'devrais chiller dans mon siège\nSo j'mind mon business\nUn jour ou l'autre y'aura pu de nuages dans le ciel\nEn motion sickness\nJ'ai pris deux Gravol j'devrais chiller dans mon siège\nMatter of fact\nJamais j'aurais connu tous les frérots\nSur le photograph\nFaut ajouter 2-3 zéros\nSur la paie si t'es short staff\nUn fresh start, on est lundi\nPis y'a pas de marde dans mon lobby\nÀ part les millions de colis\nSilly, on aurait du mettre les poubelles jeudi\nMon boy vient d'avoir l'idée du siècle\nMaintenant on peut get high dans notre garage\nPis là chaque fois que je m'égare dans le ciel, c'est la merde\nMes souvenirs m'attendront dans soute à bagages\nSo j'mind mon business\nUn jour ou l'autre y'aura pu de nuages dans le ciel\nEn motion sickness\nJ'ai pris deux Gravol j'devrais chiller dans mon siège\nSo j'mind mon business\nUn jour ou l'autre y'aura pu de nuages dans le ciel\nEn motion sickness\nJ'ai pris deux Gravol j'devrais chiller dans mon siège",
+        anecdote: "À venir — ajoute une anecdote pour cette piste quand tu veux."
+      },
+      {
+        num: "08",
+        title: "Quatrième mur",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier\nInterprété par : Xavier Fournier (Voix)",
+        lyrics: "Assis dans mon lit je vois pu rien\nJ'suis trop resté dans noirceur de ma chambre\nTu sais ce qu'on dit « j'suis jamais loin »\nPeut-être dans un after à goûter le chanvre\nPourquoi chaque fois\nQue j'dois briser le quatrième mur pour toi\nThey all go mad, but why do they care?\nI'll do it for us\nJe nous vois, sans voix\nNos dialogues vont se répéter plus de 100 fois\nBut is it that bad? Is is that bad?\nJ'pas d'accord avec ça\nGirl c'est plaisant, même si c'est draînant\nGotta let us talk, on a quand même pas treize ans\nJ'rejoue la scène qui aura changé le scénario a jamais\nPourtant on le savait pas\nPris dans mes vieilles habitudes\nJ'voulais rise up, accumuler de l'altitude\nMême si j'suis pas si sûr\nPourquoi chaque fois\nQue j'dois briser le quatrième mur pour toi\nThey all go mad, but why do they care?\nI'll do it for us\nJe nous vois, sans voix\nNos dialogues vont se répéter plus de 100 fois\nBut is it that bad? Is is that bad?\nJ'pas d'accord avec ça",
+        anecdote: "À venir — ajoute une anecdote pour cette piste quand tu veux."
+      },
+      {
+        num: "09",
+        title: "Dans le vide",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier, Nathan Frampton, Raphael Reeves, Émile Dugas-Lavallée\nInterprété par : Xavier Fournier (Voix), Raphael Reeves (Guitares, Voix additionnelles), Nathan Frampton (Keyboards), Annabelle Marcoux (Voix additionnelles), Émile Dugas-Lavallée (Synthétiseurs)",
+        lyrics: "T'as laissé 3-4 messages sur mon phone\nTho j'voudrais pas qu'on forecast notre fall off à la longue\nÇa devient bad, bad, j'pourrais hit le moonwalk\nMême si c'est rendu fade, fade ça devient vite un loose talk\nJ'vais jamais find a way de pouvoir me tanner de toi\nOn joue dans un play, le théatre peux voir nos exploits\nSo catch moi dans un date\nWe really gotta wake up\nJ'm'en fous de mon fate\nJ'suis prêt à prouver qu'ils sont baked\nOn peut get drunk ou on peut get high\nAh pis fuck it j'voudrais faire les deux même twmps\nOn peut get smooth comme du Dove\nOn fit comme un glove\nJ'pourrais me lancer dans le vide, mais serais-tu prête à jump too?\nJ'irais jusqu'au rides, si tu me disais que tu veux Come through\nMais baby c'est flou\nEst-ce qu'on fait le move ou tu restes chez vous?\nBaby come through\nY'a rien qui peut m'get faded comme toi\nJ'pourrai jamais light up, sans penser à ça\nMon brain est bien, ça sonne shady comme ça\nGarde le contrôle comme un pilot nah j'me crasherai pas\nMais j'te le cacherai pas\nC'est de plus en plus tentant de sauter dans l'tas\nMais j'voudrais pas qu'ça fuck up\nNah j'voudrais pas que ça fuck up\nJ'suis peut-être mind fucked pis j'suis dans le champ\nMais j'préfère prendre mon temps que d'tout gâcher là\nC'est peut-être les petites voix qui crient dans ma tête\nQue j'devrais un move, mais j'suis blocké tight\nIt's never been right like that\nJ'pourrais t'attendre all night pour qu'on light up\nOn peut s'rejoindre outside tant qu'on vibe\nEst-ce que tu sors par le side? J'te vois même out of sight\nOn peut get drunk ou on peut get high\nAh pis fuck it j'voudrais faire les deux même twmps\nOn peut get smooth comme du Dove\nOn fit comme un glove\nJ'pourrais me lancer dans le vide, mais serais-tu prête à jump too?\nJ'irais jusqu'aux rides, si tu me disais que tu veux Come through\nMais baby c'est flou\nEst-ce qu'on fait le move ou tu restes chez vous?\nBaby come through\nMais je pourrais me lancer dans le vide\nSerais tu prête à jump too?\nJ'irai jusqu'aux rides\nSi tu me disais que tu veux come through\nNah nah, baby come through, yeah yeah\nJ'vais me lancer dans le vide",
+        anecdote: "À venir — ajoute une anecdote pour cette piste quand tu veux."
+      },
+      {
+        num: "10",
+        title: "La dernière fois",
+        credits: "Paroles : Xavier Fournier\nMusique : Xavier Fournier\nInterprété par : Xavier Fournier (Voix, Keyboards, Guitares)",
+        lyrics: "Si j'comptais les heures\nQue j'ai pris en time off\nLe nombre ferait peur\nÀ mon employeur, qui lui se remplit les poches\nEst-ce que j'ai vraiment peur?\nAprès tout c'est moi le pilot\nSi j'suis pris dans les airs\nDois-je prendre mes affaires, et le parachute le plus proche?\nJ'veux toujours faire par passion\nSinon j'le ferais pourquoi?\nY'a ben trop d'jeunes étoiles\nQui veulent vivre comme moi\nOn pourra trouver une façon\nY'aura toujours un choix\nProfiter de l'action\nAu lieu d'ma mauvaise foi\nJ'sais que ça peut me faire mal\nJ'deviens désagréable\nLe karma va me planter un couteau dans le dos\nEst-ce que j'tourne en rond encore\nOu c'tait la dernière fois?\nSi j'alimente mes peurs\nQue j'connais pas mes paroles\nÇa m'noierait dans mes pleurs\nÇa briserait mon coeur\nMême si y'est déjà croche\nQuand j'pense à mes soeurs\nQui m'enduraient gueuler dans mon micro\nJ'suis surpris qu'à me texte quand elle m'entendent sul radio\nOu qu'elles commentent sur un vidéo\nJ'ai trop de pression sur mes épaules\n(Aah)\nMais c'est d'ma faute si j'mets toujours trop de choses dans mon backpack\nDes questions j'en ai ben trop\nMais est-ce qu'est ce qui valent la peine?\nJ'veux toujours faire par passion\nSinon j'le ferais pourquoi?\nY'a ben trop d'jeunes étoiles\nQui veulent vivre comme moi\nOn pourra trouver une façon\nY'aura toujours un choix\nProfiter de l'action\nAu lieu d'ma mauvaise foi\nJ'sais que ça peut me faire mal\nJ'deviens désagréable\nLe karma va me planter un couteau dans le dos\nEst-ce que j'tourne en rond encore\nOu c'tait la dernière fois?",
+        anecdote: "À venir — ajoute une anecdote pour cette piste quand tu veux."
+      },
+      {
+        num: "11",
+        title: "Go Mad!",
+        credits: "Paroles : Xavier Fournier, Nathan Frampton\nMusique : Xavier Fournier, Nathan Frampton, Raphael Reeves\nInterprété par : Xavier Fournier (Voix), Raphael Reeves (Guitares), Nathan Frampton (Keys), Jacob Bourassa (Voix additionnelles), Éloïse Cloutier (Voix Additionnelles)",
+        lyrics: "On ramassera demain c'est notre problème si on fout le bordel\nMicro dans salle de bain, j'veux ça clean comme une bouteille de Hertel\nOn fait ça overnight, jusqu'à temps qu'on a besoin de sommeil\nTrop d'idées dans la corbeille\nJ'préfère réfléchir à plusieurs cerveaux, ça c'est le real deal\nQue ça soit dépressif ou un hit radio, j'sais que j'get des feels\nÀ quoi ça sert de faire tout ça solo, quand j'ai mes bros\nDès qu'ils veulent qu'on fasse quelque chose, que ça va go mad\nTouchdown\nOn pourra jamais miss ensemble\nLes sols en tremblent\nJ'suis pu dans un ghost town\nJ'avais pu la force d'les entendre\nFaut monter la pente\nMais j'sais que ça va go mad\nPis stay dans le temps\nC'est du real talk, j'ferais pareil dans 100 ans\nÇa va go mad\nHonnêtement what could go bad?\nÇa va go mad\nDépenser 400 balles dans un hotel, juste pour un tournage\nMonter de Laval, au Grand Nord, juste pour shot des paysages\nOuvrir une canne dans le micro, pis trouver qu'c'est actually fire\nPour qu'on le mette dans le master\nPogner un ticket de vitesse (Fuck)\nJ'suis en retard a mon show\nParké le char trop loin au froid\nOn marche comme des manchots\nJ'repense aux souvenirs, pis à des bros qui sont partis trop tôt\nstudio dans l'auto j'sais que ça va go mad\nTouchdown\nOn pourra jamais miss ensemble\nLes sols en tremblent\nJ'suis pu dans un ghost town\nJ'avais pu la force d'les entendre\nFaut monter la pente\nMais j'sais que ça va go mad\nPis stay dans le temps\nC'est du real talk, j'ferais pareil dans 100 ans\nÇa va go mad\nHonnêtement what could go bad?\nÇa va go mad\nTouchdown\nOn pourra jamais miss ensemble\nLes sols en tremblent\nJ'suis pu dans un ghost town\nJ'avais pu la force d'les entendre\nFaut monter la pente\nMais j'sais que ça va go mad\nPis stay dans le temps\nC'est du real talk, j'ferais pareil dans 100 ans\nÇa va go mad\nHonnêtement what could go bad?\nÇa va go mad",
+        anecdote: "À venir — ajoute une anecdote pour cette piste quand tu veux."
+      }
+    ];
+
+    const buttons = document.querySelectorAll('.track-item');
+    const detailNum = document.getElementById('detail-num');
+    const detailTitle = document.getElementById('track-title');
+    const detailCredits = document.getElementById('track-credits');
+    const detailLyrics = document.getElementById('track-lyrics');
+    const detailAnecdote = document.getElementById('track-anecdote');
+    const trackExtra = document.getElementById('track-extra');
+
+    function renderTrack(index) {
+      const track = tracks[index];
+      if (!track) return;
+
+      detailNum.textContent = track.num;
+      detailTitle.textContent = track.title;
+      detailCredits.textContent = track.credits;
+      detailLyrics.textContent = track.lyrics;
+      detailAnecdote.textContent = track.anecdote;
+      const isMonstre = index === 1;
+      trackExtra.hidden = !isMonstre;
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        buttons.forEach((item) => item.classList.toggle('is-active', item === button));
+        renderTrack(Number(button.dataset.track));
+      });
+    });
+
+    renderTrack(0);
+  </script>
 
 </body>
 </html>
