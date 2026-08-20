@@ -195,6 +195,7 @@
       padding: 16px 22px;
       display: flex;
       flex-direction: column;
+      flex: 1;
       gap: 2px;
     }
 
@@ -252,12 +253,39 @@
     .ticket-perf::before { top: -6px; }
     .ticket-perf::after { bottom: -6px; }
 
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 18px;
+    }
+
+    .hero-actions .ticket { width: 100%; }
+
     .release-date {
       margin-top: 16px;
       font-size: 13px;
       letter-spacing: 0.04em;
       color: var(--paper-dim);
       text-transform: lowercase;
+    }
+
+    .hero-video-wrap {
+      margin-top: 28px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-video-wrap .tag { width: fit-content; }
+
+    .hero-video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: rgba(17, 29, 33, 0.7);
+      border: 1px solid rgba(243, 234, 217, 0.12);
+      border-radius: 2px;
     }
 
     /* sections */
@@ -443,6 +471,33 @@
       font-size: 12px;
       letter-spacing: 0.08em;
       color: var(--paper-dim);
+      text-transform: lowercase;
+    }
+
+    .artist-note-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .artist-note-inner .kicker { transform: rotate(1.5deg); }
+
+    .artist-note-text {
+      margin: 0;
+      font-style: italic;
+      font-size: clamp(18px, 2.2vw, 22px);
+      line-height: 1.85;
+      color: var(--paper-dim);
+      white-space: pre-line;
+      text-transform: lowercase;
+    }
+
+    .artist-note-sign {
+      margin: 28px 0 0;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--rose);
+      display: inline-block;
+      transform: rotate(-2deg);
       text-transform: lowercase;
     }
 
@@ -933,6 +988,8 @@
         text-align: center;
       }
 
+      .hero-video-wrap { justify-items: center; }
+
       .info-grid { grid-template-columns: 1fr; gap: 40px; }
 
       .promo-strip { flex-direction: column; align-items: flex-start; }
@@ -996,14 +1053,30 @@
       <div class="hero-copy">
         <span class="eyebrow">un nouvel album —</span>
         <h1>equynox</h1>
-        <a class="ticket ticket-perf" id="presave" href="https://euphory.tunelink.to/equynox" target="_blank" rel="noopener noreferrer">
-          <span class="ticket-main">
-            <span class="t1">pré-sauvegarder</span>
-            <span class="t2">écoute equynox en premier</span>
-          </span>
-          <span class="ticket-stub">admit&nbsp;one</span>
-        </a>
+        <div class="hero-actions">
+          <a class="ticket ticket-perf" id="presave" href="https://euphory.tunelink.to/equynox" target="_blank" rel="noopener noreferrer">
+            <span class="ticket-main">
+              <span class="t1">pré-sauvegarder</span>
+              <span class="t2">écoute l'album dès sa sortie</span>
+            </span>
+            <span class="ticket-stub">admit&nbsp;one</span>
+          </a>
+          <a class="ticket ticket-perf" href="https://untitled.stream/buy/project/xZefD9QG1EKCjk0OudvrQ" target="_blank" rel="noopener noreferrer">
+            <span class="ticket-main">
+              <span class="t1">achète l'album en primeur</span>
+              <span class="t2">achète equynox en numérique</span>
+            </span>
+            <span class="ticket-stub">acheter</span>
+          </a>
+        </div>
         <p class="release-date">sortie le 18 septembre 2026</p>
+
+        <div class="hero-video-wrap">
+          <span class="tag">l'annonce</span>
+          <video class="hero-video" controls playsinline preload="metadata" poster="https://raw.githubusercontent.com/LeQJerome/equynox/main/assets/equynox-cover.jpg">
+            <source src="https://raw.githubusercontent.com/LeQJerome/equynox/main/assets/equynox-annonce.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </section>
 
@@ -1083,6 +1156,31 @@
             <div class="slider-index" aria-live="polite"><span id="slider-current">01</span> / 04</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section class="artist-note" aria-labelledby="note-title">
+      <div class="artist-note-inner">
+        <span class="kicker">mot de l'artiste</span>
+        <h2 id="note-title">avant d'appuyer sur play</h2>
+        <p class="artist-note-text">j'ai toujours travaillé sur mes projets musicaux en étant principalement seul dans le processus. ayant appris la majorité de mes connaissances dans ma petite chambre lavalloise, c'était facile de me renfermer dans ma bulle et de gérer le projet par moi-même.
+
+été 2025, je deviens ami avec raphael reeves, beatmaker et musicien. on a la chance d'habiter pas trop loin donc ça prend pas longtemps avant qu'on se mette à composer ensemble.
+
+personnellement, ça faisait longtemps que j'avais envie de faire un album qui mise plus sur les instruments que le beatmaking. j'ai aussi toujours voulu créer un projet avec des collaborateurs; donc on a décidé de se mettre au travail.
+
+on venait d'entrer en octobre 2025 et on se met déjà à rêver à equynox, déjà prévu pour le changement de saison l'automne prochain.
+
+le plan de match : imager un changement drastique dans une vie à travers le roulement des saisons. on voulait parler de la transition qui fait de nous une nouvelle personne à la fin de la journée.
+
+pis ce qui est le plus fou là-dedans, c'est qu'on avait raison sans le savoir.
+
+ce qui a commencé par des chillings à saint-henri se transforme en nuits blanches, en nouveaux amis qui rejoignent notre voyage, jusqu'à finir par emménager avec les mêmes gars qui partageaient mes idées de grandeurs.
+
+equynox, c'est raconter le changement sans savoir qu'on est actuellement en train de le vivre.</p>
+        <p class="artist-note-sign">— xavier euphory</p>
       </div>
     </section>
 
