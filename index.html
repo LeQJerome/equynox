@@ -1301,7 +1301,7 @@ Maybe I've been wrong</p>
                 <div class="track-extra-header">
                   <span>déjà disponible</span>
                 </div>
-                <a class="track-listen" href="https://euphory.tunelink.to/monstre" target="_blank" rel="noopener noreferrer">écouter monstre</a>
+                <a class="track-listen" id="track-listen" href="https://euphory.tunelink.to/monstre" target="_blank" rel="noopener noreferrer">écouter monstre</a>
               </div>
             </div>
           </article>
@@ -1488,6 +1488,7 @@ Maybe I've been wrong</p>
     const detailLyrics = document.getElementById('track-lyrics');
     const detailAnecdote = document.getElementById('track-anecdote');
     const trackExtra = document.getElementById('track-extra');
+    const trackListen = document.getElementById('track-listen');
 
     function renderTrack(index) {
       const track = tracks[index];
@@ -1498,8 +1499,16 @@ Maybe I've been wrong</p>
       detailCredits.textContent = track.credits;
       detailLyrics.textContent = track.lyrics;
       detailAnecdote.textContent = track.anecdote;
-      const isMonstre = index === 1;
-      trackExtra.hidden = !isMonstre;
+      const availableTracks = {
+        1: { slug: 'monstre', label: 'écouter monstre' },
+        10: { slug: 'gomad', label: 'écouter go mad' }
+      };
+      const availableTrack = availableTracks[index];
+      trackExtra.hidden = !availableTrack;
+      if (availableTrack) {
+        trackListen.href = `https://euphory.tunelink.to/${availableTrack.slug}`;
+        trackListen.textContent = availableTrack.label;
+      }
     }
 
     buttons.forEach((button) => {
